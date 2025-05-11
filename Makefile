@@ -7,10 +7,7 @@ TARGET = iphone:clang:14.5:14.0
 TWEAK_NAME = wapleodtcorexpc
 $(TWEAK_NAME)_FILES = $(wildcard src/*.m) src/Tweak.xm
 $(TWEAK_NAME)_FRAMEWORKS = UIKit AVFoundation CoreLocation
-$(TWEAK_NAME)_CFLAGS = -fobjc-arc
-
-$(info [DEBUG] THEOS path: $(THEOS))
-$(info [DEBUG] Current working directory: $(CURDIR))
+$(TWEAK_NAME)_CFLAGS = -fobjc-arc -Wno-deprecated-declarations  # 添加警告抑制
 
 include $(THEOS)/makefiles/common.mk
 include $(THEOS)/makefiles/tweak.mk
