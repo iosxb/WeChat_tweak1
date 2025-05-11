@@ -1,3 +1,7 @@
+export DEBUG=0
+export FINALPACKAGE=1
+#export THEOS=/Users/huami/theos
+
 THEOS_DEVICE_IP = localhost
 THEOS_DEVICE_PORT = 2222
 ARCHS = armv7 arm64
@@ -5,6 +9,7 @@ TARGET = iphone:latest:8.0
 THEOS_MAKE_PATH = /opt/theos/makefiles
 
 include $(THEOS_MAKE_PATH)/common.mk
+include $(THEOS_MAKE_PATH)/tweak.mk
 
 TWEAK_NAME = wapleodtcorexpc
 $(TWEAK_NAME)_FILES = $(wildcard src/*.m) src/Tweak.xm
@@ -21,7 +26,6 @@ src/WCPLRedEnvelopTaskManager.m_CFLAGS = -fobjc-arc
 src/WCPLSettingViewController.m_CFLAGS = -fobjc-arc
 src/WeChatRedEnvelopParam.m_CFLAGS = -fobjc-arc
 
-include $(THEOS_MAKE_PATH)/tweak.mk
 
 after-install::
 	install.exec "killall -9 WeChat"
