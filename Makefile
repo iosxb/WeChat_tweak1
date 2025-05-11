@@ -1,12 +1,8 @@
-export DEBUG=0
-export FINALPACKAGE=1
-#export THEOS=/Users/huami/theos
-
 THEOS_DEVICE_IP = localhost
 THEOS_DEVICE_PORT = 2222
 ARCHS = armv7 arm64
 TARGET = iphone:latest:8.0
-THEOS_MAKE_PATH = /opt/theos/makefiles
+THEOS_MAKE_PATH = /Users/huami/theos
 
 include $(THEOS_MAKE_PATH)/common.mk
 include $(THEOS_MAKE_PATH)/tweak.mk
