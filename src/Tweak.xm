@@ -27,31 +27,6 @@
 %end
 */
 
-@interface WCPluginsMgr : NSObject
-
-- (instancetype)sharedInstance;
-- (void)registerControllerWithTitle:(NSString *)title 
-                            version:(NSString *)version 
-                         controller:(NSString *)controller;
-- (void)registerSwitchWithTitle:(NSString *)title 
-                            key:(NSString *)key;
-
-@end
-
-// 使用示例
-if (NSClassFromString(@"WCPluginsMgr")) {
-    // 带设置页面的插件注册
-    [[objc_getClass("WCPluginsMgr") sharedInstance] 
-        registerControllerWithTitle:@"小微助手" 
-                             version:@"1.7.8" 
-                          controller:@"控制器类名"];
-    
-    // 只有一个开关的插件注册
-    [[objc_getClass("WCPluginsMgr") sharedInstance] 
-        registerSwitchWithTitle:@"插件名称" 
-                            key:@"存储开关状态的key"];
-}
-
 %hook WCRedEnvelopesLogicMgr
 
 - (void)OnWCToHongbaoCommonResponse:(HongBaoRes *)arg1 Request:(HongBaoReq *)arg2 {
