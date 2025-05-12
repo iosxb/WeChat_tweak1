@@ -5,22 +5,16 @@
 // Copyright © 2017 dyf. All rights reserved.
 //
 
-#pragma mark - MMObject
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface MMObject : NSObject
-
 @end
-
-#pragma mark - MMService
 
 @interface MMService : NSObject
-
 @end
 
-#pragma mark - MMUIView
-
 @interface MMUIView : UIView
-
 @end
 
 #pragma mark - MMTableView
